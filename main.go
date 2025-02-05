@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-  file, err := os.Open(".gitignore/books/frankenstein.txt")
+  file, err := os.Open("books/frankenstein.txt")
   if err != nil {
     fmt.Print(err)
   }

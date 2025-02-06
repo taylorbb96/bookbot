@@ -4,6 +4,7 @@ import (
   "os"
   "io"
   "fmt"
+  "strings"
 )
 
 func main() {
@@ -13,5 +14,7 @@ func main() {
   }
 
   output, err := io.ReadAll(file)
-  fmt.Print(string(output))
+  words := strings.Fields(string(output))
+
+  fmt.Print("Words in the book: ", len(words))
 }

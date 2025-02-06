@@ -1,20 +1,23 @@
 package main
 
 import (
-  "os"
-  "io"
-  "fmt"
-  "strings"
+	"fmt"
+	"io"
+	"os"
+	"strings"
 )
 
 func main() {
-  file, err := os.Open("books/frankenstein.txt")
-  if err != nil {
-    fmt.Print(err)
-  }
+	file, err := os.Open("books/frankenstein.txt")
+	if err != nil {
+		fmt.Print(err)
+	}
 
-  output, err := io.ReadAll(file)
-  words := strings.Fields(string(output))
+	output, err := io.ReadAll(file)
+	if err != nil {
+		fmt.Print(err)
+	}
+	words := strings.Fields(string(output))
 
-  fmt.Print("Words in the book: ", len(words))
+	fmt.Print("Words in the book: ", len(words))
 }
